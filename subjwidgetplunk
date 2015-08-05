@@ -1,0 +1,65 @@
+<script>
+springshare_widget_config_1437415153815 = { path: 'subjects' };
+</script><script>
+    $(document).ready(function() {
+		        setTimeout(function() {
+
+var $widget = $("#s-lg-widget-1437415153815");
+            var $subjs = $widget.children('ul').children('li');
+            var columns = $subjs.toArray();
+
+            $($widget).detach();
+           
+            var thirds = Math.floor(columns.length / 3);
+           
+            thirds++;
+           
+var colCount1 = columns.splice(0, thirds);
+var colCount2 = columns.splice(0, thirds);
+var colCount3 = columns.splice(0, thirds);
+
+for(i=0; i<colCount1.length; i++) {
+                $("#subj-col-1").append(colCount1[i]);
+}
+for(i=0; i<colCount2.length; i++) {
+                $("#subj-col-2").append(colCount2[i]);
+}
+for(i=0; i<colCount3.length; i++) {
+                $("#subj-col-3").append(colCount3[i]);
+}
+           
+            $widget = $(".subj-col>li");
+            $widget.each(function() {
+                var $collapseTarget = $(this).children("div").attr("id");
+                var $collapseTarget = "#" + $collapseTarget;
+
+                $(this).attr("data-toggle", "collapse");
+                $(this).attr("href", $collapseTarget);
+                $(this).addClass("panel panel-default");
+                $(this).children("div").addClass("collapse panel-collapse");
+$(this).children("div").find("a").on("click", function(event) {
+event.stopPropagation();
+});
+            });
+        }, 500);
+    });
+</script><script>
+!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://lgapi.libapps.com/widgets.php?site_id=71&widget_type=4&load_type=2&widget_embed_type=1&output_format=1&list_format=1&drop_text=Select+a+Subject...&sort_type=0&widget_title=Subject+List&widget_height=250&widget_width=100%25&widget_link_color=%232954d1&guide_published=1&show_guides=1&window_target=2&config_id=1437415153815";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","s-lg-widget-script-1437415153815");
+</script>
+<style type="text/css">.panel {
+        border-radius: 15px;
+border-style: solid;
+        border-width: 5px;
+list-style-type: none;
+padding: 4px;
+}
+</style>
+<div id="s-lg-widget-1437415153815">&nbsp;</div>
+
+<div class="row" id="widgetRow">
+<div class="col-md-4 subj-col" id="subj-col-1">&nbsp;</div>
+
+<div class="col-md-4 subj-col" id="subj-col-2">&nbsp;</div>
+
+<div class="col-md-4 subj-col" id="subj-col-3">&nbsp;</div>
+</div>
